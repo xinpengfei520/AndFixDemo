@@ -31,9 +31,7 @@ public class MyApplication extends Application {
         mPatchManager.init(AppUtils.getVersionName(this));
         // Load patch
         mPatchManager.loadPatch();
-    }
 
-    public static void addPatch() {
         try {
             String patchFileStringPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath() + APATCH_PATH;
             // /storage/emulated/0/fix.apatch

@@ -18,7 +18,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.xpf.android.andfixdemo.MainActivity;
-import com.xpf.android.andfixdemo.MyApplication;
 import com.xpf.android.andfixdemo.R;
 
 import java.io.File;
@@ -43,7 +42,8 @@ public class DownloadService extends Service {
             stopForeground(true);
             getNotificationManager().notify(1, getNotification("Download Success", 100));
             Toast.makeText(DownloadService.this, "Download Success", Toast.LENGTH_SHORT).show();
-            MyApplication.addPatch();
+
+
         }
 
         @Override
