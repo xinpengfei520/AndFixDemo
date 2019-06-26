@@ -34,11 +34,10 @@ public class MyApplication extends Application {
     public static void addPatch() {
         try {
             String patchFileStringPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath() + APATCH_PATH;
-            //String patchFileStringPath = Environment.getExternalStorageDirectory().getAbsolutePath() + APATCH_PATH;
             // /storage/emulated/0/fix.apatch
             Log.i(TAG, "patchFileStringPath:" + patchFileStringPath);
-            //path of the patch file that was downloaded
-            mPatchManager.addPatch(APATCH_PATH);
+            // path of the patch file that was downloaded
+            mPatchManager.addPatch(patchFileStringPath);
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(TAG, "error:" + e.getMessage());
