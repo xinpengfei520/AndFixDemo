@@ -22,13 +22,15 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        initAndFix();
+    }
+
+    private void initAndFix() {
         mPatchManager = new PatchManager(this);
         // current app version
         mPatchManager.init(AppUtils.getVersionName(this));
         // Load patch
         mPatchManager.loadPatch();
-
-        //addPatch();
     }
 
     public static void addPatch() {
