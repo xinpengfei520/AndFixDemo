@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getContent() {
-        return "我是热修复前的内容！";
-        //return "我是热修复后的内容~";
+        //return "我是热修复前的内容！";
+        return "我是热修复后的内容~";
     }
 
     @Override
