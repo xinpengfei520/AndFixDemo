@@ -5,6 +5,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.alipay.euler.andfix.patch.PatchManager;
+import com.xpf.android.andfixdemo.utils.AppUtils;
 
 import java.io.IOException;
 
@@ -23,16 +24,17 @@ public class MyApplication extends Application {
         super.onCreate();
         mPatchManager = new PatchManager(this);
         // current app version
-        mPatchManager.init("1.0");
+        mPatchManager.init(AppUtils.getVersionName(this));
         // Load patch
         mPatchManager.loadPatch();
 
-        addPatch();
+        //addPatch();
     }
 
-    private void addPatch() {
+    public static void addPatch() {
         try {
-            String patchFileStringPath = Environment.getExternalStorageDirectory().getAbsolutePath() + APATCH_PATH;
+            String patchFileStringPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath() + APATCH_PATH;
+            //String patchFileStringPath = Environment.getExternalStorageDirectory().getAbsolutePath() + APATCH_PATH;
             // /storage/emulated/0/fix.apatch
             Log.i(TAG, "patchFileStringPath:" + patchFileStringPath);
             //path of the patch file that was downloaded
