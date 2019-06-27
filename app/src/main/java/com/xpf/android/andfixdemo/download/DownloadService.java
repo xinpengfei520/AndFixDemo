@@ -42,8 +42,6 @@ public class DownloadService extends Service {
             stopForeground(true);
             getNotificationManager().notify(1, getNotification("Download Success", 100));
             Toast.makeText(DownloadService.this, "Download Success", Toast.LENGTH_SHORT).show();
-
-
         }
 
         @Override

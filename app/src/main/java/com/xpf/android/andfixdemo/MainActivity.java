@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         tvDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(downloadBinder!=null) {
+                if (downloadBinder != null) {
                     downloadBinder.startDownload(DOWNLOAD_PATCH_URL);
                 }
             }
